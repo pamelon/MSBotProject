@@ -21,9 +21,21 @@ This is a project to demo how to build an MVP of a Bot for power users with slig
 - Install
   - Bot Composer (https://github.com/microsoft/BotFramework-Composer/releases/tag/v2.0.0)
   - Bot Emulator (https://github.com/Microsoft/BotFramework-Emulator/releases/tag/v4.13.0)
-  - Visual Studio Code (https://code.visualstudio.com/Download)
+  - Visual Studio Code (https://code.visualstudio.com/Download) and [Git](https://git-scm.com/)
+  - 
   - 
 
+## Cloning repo
+
+If this is the first time you install git you will need to configure your commit identity on git using the following commands:
+```dotnetcli
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+```
+
+> Tip: Use your github email to avoid being spammed which is handle@users.noreply.github.com
+
+In VSCode hit `cntl+shift+P` to open command palette and type `clone` to select the git clone command.
 
 
 ## Resources
