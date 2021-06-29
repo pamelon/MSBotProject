@@ -22,7 +22,7 @@ This is a project to demo how to build an MVP of a Bot for power users with slig
   - Bot Composer (https://github.com/microsoft/BotFramework-Composer/releases/tag/v2.0.0) which also needs [node.js](https://nodejs.org/en/download/) and [.NET Core SDK](https://dotnet.microsoft.com/download/dotnet/3.1)
   - Bot Emulator (https://github.com/Microsoft/BotFramework-Emulator/releases/tag/v4.13.0)
   - Visual Studio Code (https://code.visualstudio.com/Download) and [Git](https://git-scm.com/)
-  -  
+
 
 ## Cloning repo
 
