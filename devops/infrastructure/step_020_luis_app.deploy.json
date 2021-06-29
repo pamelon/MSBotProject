@@ -1,0 +1,65 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "resourceName": {
+            "type": "string"
+        },
+        "environment": {
+            "type": "string"
+        },
+        "authoringSku": {
+            "type": "string",
+            "defaultValue": "F0"
+        },
+        "runtimeSku": {
+            "type": "string",
+            "defaultValue": "F0"
+        }
+    },
+    "variables": {
+        "runtimeName": "[concat(parameters('resourceName'),'-',parameters('environment'),'-luis')]",
+        "authoringName": "[concat(parameters('resourceName'),'-',parameters('environment'),'-author-luis')]",
+        "authoringLocation": "[resourceGroup().location]",
+        "runtimeLocation": "[resourceGroup().location]"
+    },
+    "resources": [
+        {
+            "apiVersion": "2017-04-18",
+            "name": "[variables('runtimeName')]",
+            "location": "[variables('runtimeLocation')]",
+            "type": "Microsoft.CognitiveServices/accounts",
+            "kind": "LUIS",
+            "sku": {
+                "name": "[parameters('runtimeSku')]"
+            },
+            "properties": {
+                "customSubDomainName": "[variables('runtimeName')]"
+            },
+            "tags": {
+                "ApplicationName": "[parameters('resourceName')]",
+                "Environment": "[parameters('environment')]"
+            }
+        },
+        {
+            "apiVersion": "2017-04-18",
+            "name": "[variables('authoringName')]",
+            "location": "[variables('authoringLocation')]",
+            "type": "Microsoft.CognitiveServices/accounts",
+            "kind": "LUIS.Authoring",
+            "sku": {
+                "name": "[parameters('authoringSku')]"
+            },
+            "properties": {
+                "customSubDomainName": "[variables('authoringName')]"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.CognitiveServices/accounts', variables('runtimeName'))]"
+            ],
+            "tags": {
+                "ApplicationName": "[parameters('resourceName')]",
+                "Environment": "[parameters('environment')]"
+            }
+        }
+    ]
+}
