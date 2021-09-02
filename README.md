@@ -38,7 +38,14 @@ In VSCode hit `cntl+shift+P` to open command palette and type `clone` to select 
 
 ## Bot composer learning links
 
-- 
+
+
+## Proactive messaging
+
+> Note: Before reinventing the wheel, have a look at [Microsoft Viva](https://www.microsoft.com/en-us/microsoft-viva) an end-to-end employee experience offering. In [this adaptive card community call](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/adaptive-cards-community-call-june-2021/ba-p/2533826) the team is showing proactive notifications.
+
+The general idea of the proactive bots is that you store a reference to the end user, usually during the original discussion initiation and then you use that dialog reference to get back to the user from an asynchronous process.
+[This article](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-howto-proactive-message?view=azure-bot-service-4.0&tabs=csharp) gives the main points and there is a code sample for teams specifically which will be easier to implement compared to a stateless web chat. See [how to send a proactive message in teams](https://docs.microsoft.com/en-us/microsoftteams/platform/bots/how-to/conversations/send-proactive-messages?tabs=dotnet) for an overview and various code samples. Another great resource is [the github issue notification bot](https://github.com/microsoft/botframework-sdk/tree/main/dri/issueNotificationBot). In that code, you will see that the [“OnTeamsMembersAddedAsync” event is captured](https://github.com/microsoft/botframework-sdk/blob/main/dri/issueNotificationBot/Bot/Bots/IssueNotificationBot.cs). Then the [TurnContext is converted into ConversationReference](https://github.com/microsoft/botframework-sdk/blob/d1f42e8156a733d4ef4f626ffe0886eae155662c/dri/issueNotificationBot/Bot/Bots/SignInBot.cs#L220), which is then used to [start a new personal conversation](https://github.com/microsoft/botframework-sdk/blob/d1f42e8156a733d4ef4f626ffe0886eae155662c/dri/issueNotificationBot/Bot/Services/NotificationHelper.cs#L94). You can register that bot to everyone in the company [through a policy](https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/graph-proactive-installation/csharp) and your code will have to store the dialog reference for every user in a database.
 
 ## Resources
 - [Floating button](https://github.com/n01d/BotFramework-FloatingWebChat/blob/master/index.html)
