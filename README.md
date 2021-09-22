@@ -49,3 +49,7 @@ The general idea of the proactive bots is that you store a reference to the end 
 
 ## Resources
 - [Floating button](https://github.com/n01d/BotFramework-FloatingWebChat/blob/master/index.html)
+- [Power Virtual Agent, PVA](https://powervirtualagents.microsoft.com/en-us/)
+- [Bot Framework Composer](https://docs.microsoft.com/en-us/composer/introduction)
+- [Bot Framework Virtual Assistant](http://aka.ms/virtualassistant)
+- [Microsoft Azure Virtual Training Day: AI Fundamentals](https://www.microsoft.com/en-ie/training-days/azure/ai-fundamentals) for free AI 100 exam voucher.
