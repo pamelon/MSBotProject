@@ -53,3 +53,4 @@ The general idea of the proactive bots is that you store a reference to the end 
 - [Bot Framework Composer](https://docs.microsoft.com/en-us/composer/introduction)
 - [Bot Framework Virtual Assistant](http://aka.ms/virtualassistant)
 - [Microsoft Azure Virtual Training Day: AI Fundamentals](https://www.microsoft.com/en-ie/training-days/azure/ai-fundamentals) for free AI 100 exam voucher.
+- [Teams bot - icebreaker](https://github.com/OfficeDev/microsoft-teams-apps-icebreaker)
